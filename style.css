@@ -7,6 +7,14 @@ input {
   display: block;
 }
 
+span {
+  align-self: center;
+  text-align: center;
+  width: 40vw;
+  color: white;
+  background-color: red;
+}
+
 input:valid {
   border-color: green;
 }
