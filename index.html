@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <fieldset>
+      Constraint Validation API
+
+      <form action="" novalidate>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
+        <span id="spanemail"></span>
+
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+          <option value="UK">UK</option>
+          <option value="United States">United States</option>
+          <option value="Germany">Germany</option>
+          <option value="France">France</option>
+        </select>
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" name="zipCode" id="zipCode" />
+        <span id="spanzip"></span>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" />
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" />
+        <span id="spanconfirmpassword"></span>
+        <button class="submit">Submit</button>
+      </form>
+    </fieldset>
+  </body>
+  <script src="index.js"></script>
+</html>
