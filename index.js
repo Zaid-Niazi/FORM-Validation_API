@@ -38,46 +38,48 @@ function checkZipCode() {
   ];
 
   if (zipCodeInput.value !== "") {
-    switch (countryInput.value) {
-      case "United States":
-        if (regExp[0].test(zipCodeInput.value)) {
-          zipCodeInput.setCustomValidity("");
-          spanZip.textContent = "";
-        } else {
-          spanZip.textContent = "Please Provide A Valid Zip Code";
-        }
-        break;
-      case "UK":
-        if (regExp[1].test(zipCodeInput.value)) {
-          zipCodeInput.setCustomValidity("");
-          spanZip.textContent = "";
-        } else {
-          spanZip.textContent = "Please Provide A Valid Zip Code";
-        }
-        break;
-      case "Germany":
-        if (regExp[2].test(zipCodeInput.value)) {
-          zipCodeInput.setCustomValidity("");
-          spanZip.textContent = "";
-        } else {
-          spanZip.textContent = "Please Provide A Valid Zip Code";
-        }
-        break;
-      case "France":
-        if (regExp[3].test(zipCodeInput.value)) {
-          zipCodeInput.setCustomValidity("");
-          spanZip.textContent = "";
-        } else {
-          spanZip.textContent = "Please Provide A Valid Zip Code";
-        }
-        break;
-      default:
-      // code block
-    }
+    zipSwitch(regExp);
   } else {
     zipCodeInput.setCustomValidity("INVALID");
 
     spanZip.textContent = "";
+  }
+}
+
+function zipSwitch(regExp) {
+  switch (countryInput.value) {
+    case "United States":
+      if (regExp[0].test(zipCodeInput.value)) {
+        zipCodeInput.setCustomValidity("");
+        spanZip.textContent = "";
+      } else {
+        spanZip.textContent = "Please Provide A Valid Zip Code";
+      }
+      break;
+    case "UK":
+      if (regExp[1].test(zipCodeInput.value)) {
+        zipCodeInput.setCustomValidity("");
+        spanZip.textContent = "";
+      } else {
+        spanZip.textContent = "Please Provide A Valid Zip Code";
+      }
+      break;
+    case "Germany":
+      if (regExp[2].test(zipCodeInput.value)) {
+        zipCodeInput.setCustomValidity("");
+        spanZip.textContent = "";
+      } else {
+        spanZip.textContent = "Please Provide A Valid Zip Code";
+      }
+      break;
+    case "France":
+      if (regExp[3].test(zipCodeInput.value)) {
+        zipCodeInput.setCustomValidity("");
+        spanZip.textContent = "";
+      } else {
+        spanZip.textContent = "Please Provide A Valid Zip Code";
+      }
+      break;
   }
 }
 
@@ -88,6 +90,7 @@ function checkPassword() {
       confirmPasswordInput.setCustomValidity("");
       spanConformpass.textContent = "";
     } else {
+      confirmPasswordInput.setCustomValidity("Passwords do not match");
       spanConformpass.textContent = "Passwords do not match";
     }
   } else {
